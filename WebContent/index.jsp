@@ -21,7 +21,7 @@
     
       <img class="mb-4" src="imagens/bootstrap-solid.svg" alt="" width="72" height="72">
       <h1 class="h3 mb-3 font-weight-normal">Faça login</h1>
-      <label for="inputEmail" class="sr-only">Endereço de email</label>
+      <label for="inputEmail" class="sr-only">Endereço de email:</label>
       <input type="email" id="inputEmail" class="form-control" placeholder="Seu email" >
       <label for="inputPassword" class="sr-only">Senha</label>
       <input type="password" id="inputPassword" class="form-control" placeholder="Senha" >
