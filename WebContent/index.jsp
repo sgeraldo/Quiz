@@ -27,17 +27,11 @@
       <input type="password" id="inputPassword" class="form-control" placeholder="Senha" >
       <div class="checkbox mb-3">
         <label>
-          <input type="checkbox" value="remember-me"> Lembrar de mim.
+          <input type="checkbox" value="remember-me"> Lembrar de mim
         </label>
       </div>
     <button class="btn btn-lg btn-primary btn-block" type="submit" value="Enviar">Login</button> 
       <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
     </form>
-    
-<!--      <form class="form-signin" action="email" method="post"> -->
-<!--           <button class="btn btn-lg btn-primary btn-block" type="submit" value="Enviar">Login</button>  -->
-<!--      </form> -->
-    
-    
   </body>
 </html>
