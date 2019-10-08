@@ -37,7 +37,7 @@ public class Controler extends HttpServlet {
 		// TODO Auto-generated method stub
 		String nome = "";
 		String sobrenome = "";
-		
+
 		nome = request.getParameter("nome");
 
 		sobrenome = request.getParameter("sobrenome");
@@ -55,17 +55,19 @@ public class Controler extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-			
+
 		String opcao = request.getParameter("cmd");
-		
-		if(opcao.equalsIgnoreCase("lista")) {
-			enviarLista(request, response);	
+
+		if (opcao.equalsIgnoreCase("lista")) {
+			enviarLista(request, response);
 		}
-		if(opcao.equalsIgnoreCase("email")) {
-			enviarEmail(request, response);	
+		if (opcao.equalsIgnoreCase("email")) {
+			enviarEmail(request, response);
 		}
-		
-		
+		if (opcao.equalsIgnoreCase("listarRespostas")) {
+			listarRespostas(request, response);
+		}
+
 //      ArrayList<String> lista = new ArrayList<String>();
 //		
 //		request.setAttribute("lista", lista);
@@ -78,29 +80,32 @@ public class Controler extends HttpServlet {
 //		request.setAttribute("nome", nome);
 //		request.setAttribute("sobrenome", sobrenome);
 //		request.getRequestDispatcher("listarPerguntas.jsp").forward(request, response);
-						
+
 	}
-	
+
 	protected void enviarLista(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-		    List<Metrica> listagem = new ArrayList<Metrica>();
-		    
-		    	 QuestionarioDAO qt1 = new QuestionarioDAO();
-				    
-				    listagem = qt1.listarMetricas();
-							
-				    request.setAttribute("listagem", listagem); 
-					    
-				    request.getRequestDispatcher("/jsp/listarPerguntas.jsp").forward(request, response);
-			};
- 
-		
+
+		List<Metrica> listagem = new ArrayList<Metrica>();
+
+		QuestionarioDAO qt1 = new QuestionarioDAO();
+
+		listagem = qt1.listarMetricas();
+
+		request.setAttribute("listagem", listagem);
+
+		request.getRequestDispatcher("/jsp/listarPerguntas.jsp").forward(request, response);
+	};
+
+	protected void listarRespostas(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+			request.getRequestDispatcher("/jsp/listarRespostas.jsp").forward(request, response);
+	};
+
 	protected void enviarEmail(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setAttribute("email", "email enviado");
 		request.getRequestDispatcher("/jsp/listarPerguntas.jsp").forward(request, response);
 	}
 }
-
-
